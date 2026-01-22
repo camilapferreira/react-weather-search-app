@@ -1,0 +1,40 @@
+> "create-vite" . --template react
+
+│
+◇  Use rolldown-vite (Experimental)?:
+│  Yes
+│
+◇  Install with npm and start now?
+│  Yes
+│
+◇  Scaffolding project in /Users/pferreiracamila/projects/react-weather-search-app...
+│
+◇  Installing dependencies with npm...
+
+added 160 packages, and audited 161 packages in 9s
+
+36 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+│
+◇  Starting dev server...
+
+> react-weather-search-app@0.0.0 dev
+> vite
+
+
+  ROLLDOWN-VITE v7.2.5  ready in 333 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+10:36:56 PM [vite] (client) hmr update /src/App.css
+10:37:28 PM [vite] (client) hmr update /src/App.jsx
+
+npm install react-bootstrap bootstrap
+[A
+cd
+
+delete
+clear
