@@ -1,0 +1,55 @@
+.weather-search {
+  background: linear-gradient(to top, #e0ddf1 0%, #a3daff 100%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Weather-info {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.temperature-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: right;
+}
+
+.temperature-container strong {
+  font-size: 56px;
+  font-weight: bold;
+  color: #000;
+}
+
+.temperature-container span {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.temperature-container a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.WeatherForecast {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.WeatherForecastPreview {
+  background: linear-gradient(to top, #c6c1e8 0%, #a3daff 100%);
+  padding: 20px;
+  border-radius: 10px;
+}
