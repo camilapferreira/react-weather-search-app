@@ -18,31 +18,32 @@ ul {
 }
 
 .temperature-container {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 10px;
   text-align: right;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .temperature-container strong {
-  font-size: 56px;
+  font-size: 72px;
   font-weight: bold;
   color: #000;
+  line-height: 1; /* Garante que a altura da linha não empurre o span para baixo */
 }
 
 .temperature-container span {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
 }
 
 .temperature-container a {
   text-decoration: none;
   color: #000;
-  margin-left: 10px;
-  margin-right: 10px;
+}
+
+.temperature-value {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens no topo */
 }
 
 .WeatherForecast {

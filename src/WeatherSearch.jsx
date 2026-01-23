@@ -36,13 +36,13 @@ export default function WeatherSearch() {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-6 col-md-6 col-sm-8">
+            <div className="col-6">
               <div className="temperature-container d-flex justify-content-end">
                 <img
                   src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                   alt="weather icon"
                 />
-                <div>
+                <div className="temperature-value">
                   <strong>10</strong>
                   <span className="units">
                     <a href="/">°C</a> | <a href="/">°F</a>
