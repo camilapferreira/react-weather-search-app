@@ -38,7 +38,10 @@ export default function WeatherSearch() {
             </div>
             <div className="col-lg-6 col-md-6 col-sm-8">
               <div className="temperature-container d-flex justify-content-end">
-                <canvas width="52" height="52"></canvas>
+                <img
+                  src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                  alt="weather icon"
+                />
                 <div>
                   <strong>10</strong>
                   <span className="units">
@@ -54,7 +57,10 @@ export default function WeatherSearch() {
           <div class="col">
             <div class="WeatherForecastPreview">
               <div class="forecast-time">Fri</div>
-              <canvas width="38" height="38"></canvas>
+              <img
+                src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                alt="weather icon"
+              />
               <div class="forecast-temperature">
                 <span class="forecast-temperature-max">14°</span>
                 <span class="forecast-temperature-min">11°</span>
@@ -64,7 +70,10 @@ export default function WeatherSearch() {
           <div class="col">
             <div class="WeatherForecastPreview">
               <div class="forecast-time">Sat</div>
-              <canvas width="38" height="38"></canvas>
+              <img
+                src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                alt="weather icon"
+              />
               <div class="forecast-temperature">
                 <span class="forecast-temperature-max">15°</span>
                 <span class="forecast-temperature-min">11°</span>
@@ -74,7 +83,10 @@ export default function WeatherSearch() {
           <div class="col">
             <div class="WeatherForecastPreview">
               <div class="forecast-time">Sun</div>
-              <canvas width="38" height="38"></canvas>
+              <img
+                src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                alt="weather icon"
+              />
               <div class="forecast-temperature">
                 <span class="forecast-temperature-max">14°</span>
                 <span class="forecast-temperature-min">10°</span>
@@ -84,7 +96,10 @@ export default function WeatherSearch() {
           <div class="col">
             <div class="WeatherForecastPreview">
               <div class="forecast-time">Mon</div>
-              <canvas width="38" height="38"></canvas>
+              <img
+                src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                alt="weather icon"
+              />
               <div class="forecast-temperature">
                 <span class="forecast-temperature-max">15°</span>
                 <span class="forecast-temperature-min">10°</span>
@@ -94,7 +109,10 @@ export default function WeatherSearch() {
           <div class="col">
             <div class="WeatherForecastPreview">
               <div class="forecast-time">Tue</div>
-              <canvas width="38" height="38"></canvas>
+              <img
+                src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
+                alt="weather icon"
+              />
               <div class="forecast-temperature">
                 <span class="forecast-temperature-max">15°</span>
                 <span class="forecast-temperature-min">10°</span>
