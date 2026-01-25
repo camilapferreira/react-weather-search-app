@@ -4,11 +4,7 @@ import { useWeather } from "./Application/useWeather";
 
 export default function WeatherSearch() {
   const [city, setCity] = useState("");
-  const [temperature, setTemperature] = useState(null);
-  const [condition, setCondition] = useState(null);
-  const [humidity, SetHumidity] = useState(null);
-  const [wind, SetWind] = useState(null);
-  const [icon, SetIcon] = useState(null);
+  const [WeatherData, setWeatherData] = useState({});
   const hook = useWeather();
 
   function handleSubmit(event) {
@@ -20,12 +16,14 @@ export default function WeatherSearch() {
   }
 
   function showData(response) {
-    setTemperature(Math.round(response.data.temperature.current));
-    setCondition(response.data.condition.description);
-    SetHumidity(response.data.temperature.humidity);
-    SetWind(response.data.wind.speed);
-    SetIcon(response.data.condition.icon_url);
-    console.log(response);
+    setWeatherData({
+      temperature: Math.round(response.data.temperature.current),
+      condition: response.data.condition.description,
+      humidity: response.data.temperature.humidity,
+      wind: response.data.wind.speed,
+      icon: response.data.condition.icon_url,
+      city: response.data.city,
+    });
   }
 
   function handleChange(event) {
@@ -43,7 +41,7 @@ export default function WeatherSearch() {
                 placeholder="Enter city name"
                 className="form-control search-input"
                 onChange={handleChange}
-                value={city}
+                value={WeatherData.city}
               ></input>
             </div>
             <div className="col-3 p-0">
@@ -58,22 +56,22 @@ export default function WeatherSearch() {
         <div className="Weather-info">
           <div className="row">
             <div className="col-6">
-              <h1>{city}</h1>
+              <h1>{WeatherData.city}</h1>
               <ul>
                 <li>
-                  <span>Friday 13:18</span>, {condition}
+                  <span>Friday 13:18</span>, {WeatherData.condition}
                 </li>
                 <li>
-                  Humidity: <strong>{humidity}%</strong>, Wind:{" "}
-                  <strong>{wind} km/h</strong>
+                  Humidity: <strong>{WeatherData.humidity}%</strong>, Wind:{" "}
+                  <strong>{WeatherData.wind} km/h</strong>
                 </li>
               </ul>
             </div>
             <div className="col-6">
               <div className="temperature-container d-flex justify-content-end">
-                <img src={icon} alt="weather icon" />
+                <img src={WeatherData.icon} alt="weather icon" />
                 <div className="temperature-value">
-                  <strong>{temperature}</strong>
+                  <strong>{WeatherData.temperature}</strong>
                   <span className="units">
                     <a href="/">°C</a> | <a href="/">°F</a>
                   </span>
