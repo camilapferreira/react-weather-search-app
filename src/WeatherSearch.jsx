@@ -4,28 +4,32 @@ import { useWeather } from "./Application/useWeather";
 
 export default function WeatherSearch() {
   const [city, setCity] = useState("");
-  fetch("http://127.0.0.1:7242/ingest/7b1cd414-8f89-4a7d-ac5c-377cf36aa67f", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      location: "WeatherSearch.jsx:8",
-      message: "Calling useWeather",
-      data: { useWeatherType: typeof useWeather },
-      timestamp: Date.now(),
-      sessionId: "debug-session",
-      hypothesisId: "B",
-    }),
-  }).catch(() => {});
-  // #endregion
+  const [temperature, setTemperature] = useState(null);
+  const [condition, setCondition] = useState(null);
+  const [humidity, SetHumidity] = useState(null);
+  const [wind, SetWind] = useState(null);
+  const [icon, SetIcon] = useState(null);
   const hook = useWeather();
-
-  function handleChange(event) {
-    setCity(event.target.value);
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
-    hook.getTemperature(city);
+
+    if (city.length > 0) {
+      hook(city).then(showData);
+    }
+  }
+
+  function showData(response) {
+    setTemperature(Math.round(response.data.temperature.current));
+    setCondition(response.data.condition.description);
+    SetHumidity(response.data.temperature.humidity);
+    SetWind(response.data.wind.speed);
+    SetIcon(response.data.condition.icon_url);
+    console.log(response);
+  }
+
+  function handleChange(event) {
+    setCity(event.target.value);
   }
 
   return (
@@ -57,21 +61,19 @@ export default function WeatherSearch() {
               <h1>{city}</h1>
               <ul>
                 <li>
-                  <span>Friday 13:18</span>, few clouds
+                  <span>Friday 13:18</span>, {condition}
                 </li>
                 <li>
-                  Humidity: <strong>50%</strong>, Wind: <strong>10 km/h</strong>
+                  Humidity: <strong>{humidity}%</strong>, Wind:{" "}
+                  <strong>{wind} km/h</strong>
                 </li>
               </ul>
             </div>
             <div className="col-6">
               <div className="temperature-container d-flex justify-content-end">
-                <img
-                  src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
-                  alt="weather icon"
-                />
+                <img src={icon} alt="weather icon" />
                 <div className="temperature-value">
-                  <strong>10</strong>
+                  <strong>{temperature}</strong>
                   <span className="units">
                     <a href="/">°C</a> | <a href="/">°F</a>
                   </span>
@@ -81,69 +83,69 @@ export default function WeatherSearch() {
           </div>
         </div>
 
-        <div class="WeatherForecast row">
-          <div class="col">
-            <div class="WeatherForecastPreview">
-              <div class="forecast-time">Fri</div>
+        <div className="WeatherForecast row">
+          <div className="col">
+            <div className="WeatherForecastPreview">
+              <div className="forecast-time">Fri</div>
               <img
                 src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                 alt="weather icon"
               />
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">14°</span>
-                <span class="forecast-temperature-min">11°</span>
+              <div className="forecast-temperature">
+                <span className="forecast-temperature-max">14°</span>
+                <span className="forecast-temperature-min">11°</span>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="WeatherForecastPreview">
-              <div class="forecast-time">Sat</div>
+          <div className="col">
+            <div className="WeatherForecastPreview">
+              <div className="forecast-time">Sat</div>
               <img
                 src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                 alt="weather icon"
               />
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">15°</span>
-                <span class="forecast-temperature-min">11°</span>
+              <div className="forecast-temperature">
+                <span className="forecast-temperature-max">15°</span>
+                <span className="forecast-temperature-min">11°</span>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="WeatherForecastPreview">
-              <div class="forecast-time">Sun</div>
+          <div className="col">
+            <div className="WeatherForecastPreview">
+              <div className="forecast-time">Sun</div>
               <img
                 src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                 alt="weather icon"
               />
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">14°</span>
-                <span class="forecast-temperature-min">10°</span>
+              <div className="forecast-temperature">
+                <span className="forecast-temperature-max">14°</span>
+                <span className="forecast-temperature-min">10°</span>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="WeatherForecastPreview">
-              <div class="forecast-time">Mon</div>
+          <div className="col">
+            <div className="WeatherForecastPreview">
+              <div className="forecast-time">Mon</div>
               <img
                 src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                 alt="weather icon"
               />
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">15°</span>
-                <span class="forecast-temperature-min">10°</span>
+              <div className="forecast-temperature">
+                <span className="forecast-temperature-max">15°</span>
+                <span className="forecast-temperature-min">10°</span>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="WeatherForecastPreview">
-              <div class="forecast-time">Tue</div>
+          <div className="col">
+            <div className="WeatherForecastPreview">
+              <div className="forecast-time">Tue</div>
               <img
                 src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
                 alt="weather icon"
               />
-              <div class="forecast-temperature">
-                <span class="forecast-temperature-max">15°</span>
-                <span class="forecast-temperature-min">10°</span>
+              <div className="forecast-temperature">
+                <span className="forecast-temperature-max">15°</span>
+                <span className="forecast-temperature-min">10°</span>
               </div>
             </div>
           </div>
