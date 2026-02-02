@@ -41,7 +41,8 @@ export default function WeatherSearch() {
               <h1>{WeatherData.city}</h1>
               <ul>
                 <li>
-                  <span>{formatDate()}</span>, {WeatherData.condition}
+                  <span>{formatDate(WeatherData.date)}</span>,{" "}
+                  {WeatherData.condition}
                 </li>
                 <li>
                   Humidity: <strong>{WeatherData.humidity}%</strong>, Wind:{" "}
