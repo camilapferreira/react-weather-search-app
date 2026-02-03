@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./WeatherSearch.css";
 import { useWeather } from "./Application/useWeather";
+import ConvertTemperature from "./ConvertTemperature";
 
 export default function WeatherSearch() {
   const {
@@ -53,12 +54,7 @@ export default function WeatherSearch() {
             <div className="col-6">
               <div className="temperature-container d-flex justify-content-end">
                 <img src={WeatherData.icon} alt="weather icon" />
-                <div className="temperature-value">
-                  <strong>{WeatherData.temperature}</strong>
-                  <span className="units">
-                    <a href="/">°C</a> | <a href="/">°F</a>
-                  </span>
-                </div>
+                <ConvertTemperature temperature={WeatherData.temperature} />
               </div>
             </div>
           </div>
