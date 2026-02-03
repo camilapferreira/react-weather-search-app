@@ -81,7 +81,7 @@ export default function WeatherSearch() {
       <footer>
         This project was developed by Camila Ferreira and it is open source on{" "}
         <a
-          href="https://github.com/camila-ferreira/react-weather-search-app"
+          href="https://github.com/camilapferreira/react-weather-search-app"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -90,7 +90,7 @@ export default function WeatherSearch() {
         </a>{" "}
         and hosted on{" "}
         <a
-          href="https://react-weather-search-app.netlify.app/"
+          href="https://weather-search-react-app.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
