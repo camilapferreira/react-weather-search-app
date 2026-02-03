@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./WeatherSearch.css";
 import { useWeather } from "./Application/useWeather";
 import ConvertTemperature from "./ConvertTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherSearch() {
   const {
@@ -59,24 +60,7 @@ export default function WeatherSearch() {
             </div>
           </div>
         </div>
-
-        <div className="WeatherForecast row">
-          {weekdays.map((day) => (
-            <div className="col">
-              <div className="WeatherForecastPreview">
-                <div className="forecast-time">Fri</div>
-                <img
-                  src="https://www.gstatic.com/weather/conditions/v1/svg/cloudy_light.svg"
-                  alt="weather icon"
-                />
-                <div className="forecast-temperature">
-                  <span className="forecast-temperature-max">14°</span>
-                  <span className="forecast-temperature-min">11°</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <WeatherForecast weekdays={weekdays} city={city} />
       </div>
       <footer>
         This project was developed by Camila Ferreira and it is open source on{" "}
