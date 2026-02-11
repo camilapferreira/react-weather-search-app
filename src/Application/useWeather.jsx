@@ -3,7 +3,6 @@ import axios from "axios";
 export const formatDate = (date) => {
   if (!date) return ""; // Retorna vazio se a data ainda não existir
 
-  const day = date.getDate();
   const dayOfWeek = date.getDay();
   let hours = date.getHours();
   if (hours < 10) hours = `0${hours}`; // Opcional: formata 09:05 em vez de 9:5
