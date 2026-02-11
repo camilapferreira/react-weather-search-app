@@ -23,6 +23,7 @@ export const formatDate = (date) => {
 
 const useWeather = () => {
   const [city, setCity] = useState("Paris");
+  const [searchInput, setSearchInput] = useState("");
   const [WeatherData, setWeatherData] = useState({});
   const weekdays = Array.from({ length: 5 }, (_, index) => index + 1);
   const [unit, setUnit] = useState("celsius");
@@ -30,13 +31,13 @@ const useWeather = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (city.length > 0) {
-      getTemperature(city).then(showData);
+    if (searchInput.length > 0) {
+      setCity(searchInput);
     }
   }
   useEffect(() => {
     getTemperature(city).then(showData);
-  }, []);
+  }, [city]);
 
   function showData(response) {
     console.log(response);
@@ -52,7 +53,7 @@ const useWeather = () => {
   }
 
   function handleChange(event) {
-    setCity(event.target.value);
+    setSearchInput(event.target.value);
   }
   function getTemperature(city) {
     const apiKey = "44b4d9f5e3a3baf490c33c5519ot4f0a";

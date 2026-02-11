@@ -12,6 +12,7 @@ export default function WeatherSearch() {
     handleSubmit,
     handleChange,
     formatDate,
+    searchInput,
   } = useWeather();
 
   return (
@@ -25,7 +26,7 @@ export default function WeatherSearch() {
                 placeholder="Enter city name"
                 className="form-control search-input"
                 onChange={handleChange}
-                value={city}
+                value={searchInput}
               ></input>
             </div>
             <div className="col-3 p-0">

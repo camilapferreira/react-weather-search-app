@@ -5,7 +5,7 @@ import WeatherSearch from "./WeatherSearch.jsx";
 function App() {
   return (
     <div className="app">
-      <WeatherSearch />
+      <WeatherSearch city="Paris" />
     </div>
   );
 }
