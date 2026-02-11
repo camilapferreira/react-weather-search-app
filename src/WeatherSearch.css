@@ -57,3 +57,23 @@ ul {
   padding: 20px;
   border-radius: 10px;
 }
+
+@media (max-width: 576px) {
+  .temperature-container strong {
+    font-size: 48px; /* Diminui o tamanho da temperatura principal */
+  }
+
+  .Weather-info {
+    text-align: center; /* Centraliza as informações no mobile */
+  }
+
+  .temperature-container {
+    justify-content: center !important; /* Centraliza a temperatura */
+    margin-top: 20px;
+  }
+
+  .WeatherForecastPreview {
+    padding: 10px; /* Reduz o padding para ganhar espaço */
+    font-size: 14px;
+  }
+}

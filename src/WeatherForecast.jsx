@@ -16,7 +16,7 @@ export default function WeatherForecast({ weekdays, city }) {
   return (
     <div className="WeatherForecast row">
       {weekdays.map((day) => (
-        <div className="col">
+        <div className="col-md col-4 mb-3">
           <div className="WeatherForecastPreview">
             <div className="forecast-time">
               {formatDay(forecastData[day - 1].time)}

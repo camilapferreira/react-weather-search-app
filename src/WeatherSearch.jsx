@@ -20,7 +20,7 @@ export default function WeatherSearch() {
       <div className="weather-search">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-sm-9 col-12 mb-2">
               <input
                 type="text"
                 placeholder="Enter city name"
@@ -29,7 +29,7 @@ export default function WeatherSearch() {
                 value={searchInput}
               ></input>
             </div>
-            <div className="col-3 p-0">
+            <div className="col-sm-3 col-12">
               <input
                 className="btn btn-primary w-100"
                 type="submit"
@@ -40,7 +40,7 @@ export default function WeatherSearch() {
         </form>
         <div className="Weather-info">
           <div className="row">
-            <div className="col-6">
+            <div className="col-md-6 col-12">
               <h1>{WeatherData.city}</h1>
               <ul>
                 <li>
@@ -53,7 +53,7 @@ export default function WeatherSearch() {
                 </li>
               </ul>
             </div>
-            <div className="col-6">
+            <div className="col-md-6 col-12">
               <div className="temperature-container d-flex justify-content-end">
                 <img src={WeatherData.icon} alt="weather icon" />
                 <ConvertTemperature temperature={WeatherData.temperature} />
